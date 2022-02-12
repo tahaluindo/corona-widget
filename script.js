@@ -1,33 +1,144 @@
-const totalCases = document.querySelector(".total_cases");
-const deaths = document.querySelector(".deaths");
-const recovered = document.querySelector(".recovered");
-const newCases = document.querySelector(".new_cases");
-var settings = {
-  async: true,
-  crossDomain: true,
-  url:
-    "https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php",
-  method: "GET",
-  headers: {
-    "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
-    "x-rapidapi-key": "7ab5bc98e5msh2a02aa319f5d355p1f98bdjsn76fd281af303"
-  }
-};
+Vue.component('stat-title', {
+  template: `
+    <h4 class="text-sm mb-2 uppercase font-medium text-gray-500">
+      <slot/>
+    </h4>` });
 
-$.ajax(settings).done(function(response) {
-  displayData(response);
-});
 
-function displayData(data) {
-  const parsedData = JSON.parse(data);
-  console.log(parsedData.countries_stat);
-  const countries = parsedData.countries_stat;
-  countries.forEach(function(country) {
-    if (country.country_name == "Indonesia") {
-      totalCases.innerHTML = country.cases;
-      deaths.innerHTML = country.deaths;
-      recovered.innerHTML = country.total_recovered;
-      newCases.innerHTML = country.new_cases;
-    }
-  });
-}
+Vue.component('stat-num', {
+  props: {
+    stat: {
+      type: Number,
+      default: 0 } },
+
+
+  template: `
+    <h4 class="font-mono font-medium bold text-purple-700">
+      {{ stat.toLocaleString() }}
+    </h4>` });
+
+
+Vue.component('card', {
+  template: `
+    <div class="card rounded overvlow-hidden shadow-md p-6 border border-gray-300 mb-4 md:mb-0">
+      <slot />
+    </div>` });
+
+
+Vue.component('alert', {
+  template: `
+    <div role="alert">
+      <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+        <slot name="title"/>
+      </div>
+      <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+        <slot name="content"/>
+      </div>
+    </div>` });
+
+
+Vue.component('pagination', {
+  props: {
+    hasPrev: {
+      type: Boolean,
+      default: false },
+
+    hasNext: {
+      type: Boolean,
+      default: false } },
+
+
+  template: `
+    <div class="pagination mt-4 flex">
+      <button
+        class="bg-purple-600 rounded py-2 px-4 text-white font-semibold"
+        :disabled="!hasPrev"
+        :class="{ 'cursor-not-allowed opacity-50': !hasPrev }"
+        @click="$emit('prev')">
+          &larr; Prev
+      </button>
+      <button
+        class="bg-purple-600 rounded py-2 px-4 text-white font-semibold ml-auto"
+        :disabled="!hasNext"
+        :class="{ 'cursor-not-allowed opacity-50': !hasNext }"
+        @click="$emit('next')">
+          Next &rarr;
+      </button>
+    </div>` });
+
+
+const app = new Vue({
+  el: '#app',
+  data() {
+    return {
+      api: 'https://coronavirus-19-api.herokuapp.com',
+      statsLoaded: false,
+      countriesLoaded: false,
+      errorStats: false,
+      errorCountries: false,
+      items: [],
+      stats: [],
+      pageSize: 6,
+      pageNumber: 0 };
+
+  },
+  computed: {
+    pageCount() {
+      const itemCount = Object.entries(this.items).length;
+      const pageSize = this.pageSize;
+
+      return Math.ceil(itemCount / pageSize);
+    },
+    paginatedData() {
+      const data = this.items;
+      const start = this.pageNumber * this.pageSize;
+      const end = start + this.pageSize;
+      const filtered = data.slice(start, end);
+
+      return filtered;
+    },
+    pagePlace() {
+      return `Page ${this.pageNumber + 1} of ${this.pageCount}`;
+    } },
+
+  mounted() {
+    this.fetchCountryData();
+    this.fetchStats();
+  },
+  methods: {
+    // fetch stats by country
+    fetchCountryData() {
+      this.countriesLoaded = false;
+      this.errorCountries = false;
+
+      fetch(`${this.api}/countries`).
+      then(res => res.json()).
+      then(data => this.items = data).
+      finally(() => this.countriesLoaded = true).
+      catch(error => {
+        this.countriesLoaded = false;
+        this.errorCountries = true;
+        console.log(error);
+      });
+    },
+    // fetch basic stats
+    fetchStats() {
+      this.statsLoaded = false;
+      this.errorStats = false;
+
+      fetch(`${this.api}/all`).
+      then(res => res.json()).
+      then(data => this.stats = data).
+      finally(() => this.statsLoaded = true).
+      catch(error => {
+        this.statsLoaded = false;
+        this.errorStats = true;
+        console.log(error);
+      });
+    },
+    prevPage() {
+      this.pageNumber--;
+    },
+    nextPage() {
+      this.pageNumber++;
+    } } });
