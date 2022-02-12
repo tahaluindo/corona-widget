@@ -1,0 +1,105 @@
+2021 OCT 07 08:35:02,247:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onCreate()
+2021 OCT 07 08:35:02,259:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart()
+2021 OCT 07 08:35:02,260:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mIsStarting is false, set mIsStarting = true
+2021 OCT 07 08:35:02,260:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]startDaemonServer(true)
+2021 OCT 07 08:35:02,262:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mDaemonServer == null
+2021 OCT 07 08:35:02,462:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]set mIsStarting = false
+2021 OCT 07 08:35:02,471:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart used time: 212
+2021 OCT 07 08:35:02,474:[thread: 1072] [DEBUG] [daemon.h.b.b]start nio server
+2021 OCT 07 08:35:02,476:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart()
+2021 OCT 07 08:35:02,479:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mIsServerRun = ture
+2021 OCT 07 08:35:02,480:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mIsStarting is false, set mIsStarting = true
+2021 OCT 07 08:35:02,481:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]startDaemonServer(false)
+2021 OCT 07 08:35:02,482:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]set mIsStarting = false
+2021 OCT 07 08:35:02,483:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart used time: 4
+2021 OCT 07 08:35:02,517:[thread: 1079] [DEBUG] [daemon.h.b.c]SelectReactor run()
+2021 OCT 07 08:35:03,395:[thread: 1081] [ERROR] [daemon.c.c]start heartbeat server.
+2021 OCT 07 08:36:23,537:[thread: 1080] [DEBUG] [daemon.c.b]close conn
+2021 OCT 07 08:36:23,720:[thread: 1080] [DEBUG] [com.moborobo.daemon.server.ServerService]no connection, stop service
+2021 OCT 07 08:36:25,259:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]** Enter ServerService onDestroy. **
+2021 OCT 07 08:36:26,429:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]*Close LogCenter.
+2021 OCT 07 08:37:12,820:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onCreate()
+2021 OCT 07 08:37:12,829:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart()
+2021 OCT 07 08:37:12,830:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mIsStarting is false, set mIsStarting = true
+2021 OCT 07 08:37:12,831:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]startDaemonServer(false)
+2021 OCT 07 08:37:12,832:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mDaemonServer == null
+2021 OCT 07 08:37:12,922:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]set mIsStarting = false
+2021 OCT 07 08:37:12,923:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart used time: 93
+2021 OCT 07 08:37:12,923:[thread: 1229] [DEBUG] [daemon.h.b.b]start nio server
+2021 OCT 07 08:37:12,948:[thread: 1233] [DEBUG] [daemon.h.b.c]SelectReactor run()
+2021 OCT 07 08:37:13,551:[thread: 1235] [ERROR] [daemon.c.c]start heartbeat server.
+2021 OCT 07 08:37:16,400:[thread: 1238] [DEBUG] [daemon.c.b]close conn
+2021 OCT 07 08:37:16,405:[thread: 1238] [DEBUG] [com.moborobo.daemon.server.ServerService]no connection, stop service
+2021 OCT 07 08:37:16,579:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]** Enter ServerService onDestroy. **
+2021 OCT 07 08:37:17,857:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]*Close LogCenter.
+2021 OCT 07 08:37:34,630:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onCreate()
+2021 OCT 07 08:37:34,637:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart()
+2021 OCT 07 08:37:34,638:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mIsStarting is false, set mIsStarting = true
+2021 OCT 07 08:37:34,638:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]startDaemonServer(false)
+2021 OCT 07 08:37:34,640:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mDaemonServer == null
+2021 OCT 07 08:37:34,704:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]set mIsStarting = false
+2021 OCT 07 08:37:34,705:[thread: 1237] [DEBUG] [daemon.h.b.b]start nio server
+2021 OCT 07 08:37:34,705:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart used time: 68
+2021 OCT 07 08:37:34,728:[thread: 1243] [DEBUG] [daemon.h.b.c]SelectReactor run()
+2021 OCT 07 08:37:35,464:[thread: 1245] [ERROR] [daemon.c.c]start heartbeat server.
+2021 OCT 07 08:54:44,482:[thread: 1252] [DEBUG] [daemon.c.b]close conn
+2021 OCT 07 08:54:44,571:[thread: 1252] [DEBUG] [com.moborobo.daemon.server.ServerService]no connection, stop service
+2021 OCT 07 08:54:44,849:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]** Enter ServerService onDestroy. **
+2021 OCT 07 08:54:46,41:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]*Close LogCenter.
+2021 OCT 07 09:06:04,143:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onCreate()
+2021 OCT 07 09:06:04,171:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart()
+2021 OCT 07 09:06:04,172:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mIsStarting is false, set mIsStarting = true
+2021 OCT 07 09:06:04,172:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]startDaemonServer(false)
+2021 OCT 07 09:06:04,174:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mDaemonServer == null
+2021 OCT 07 09:06:04,313:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]set mIsStarting = false
+2021 OCT 07 09:06:04,314:[thread: 919] [DEBUG] [daemon.h.b.b]start nio server
+2021 OCT 07 09:06:04,314:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart used time: 143
+2021 OCT 07 09:06:04,346:[thread: 923] [DEBUG] [daemon.h.b.c]SelectReactor run()
+2021 OCT 07 09:06:04,977:[thread: 925] [ERROR] [daemon.c.c]start heartbeat server.
+2021 OCT 07 09:06:42,170:[thread: 924] [DEBUG] [daemon.c.b]close conn
+2021 OCT 07 09:06:42,176:[thread: 924] [DEBUG] [com.moborobo.daemon.server.ServerService]no connection, stop service
+2021 OCT 07 09:06:42,329:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]** Enter ServerService onDestroy. **
+2021 OCT 07 09:06:43,502:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]*Close LogCenter.
+2021 OCT 07 09:06:48,276:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onCreate()
+2021 OCT 07 09:06:48,284:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart()
+2021 OCT 07 09:06:48,285:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mIsStarting is false, set mIsStarting = true
+2021 OCT 07 09:06:48,287:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]startDaemonServer(false)
+2021 OCT 07 09:06:48,288:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mDaemonServer == null
+2021 OCT 07 09:06:48,377:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]set mIsStarting = false
+2021 OCT 07 09:06:48,378:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart used time: 93
+2021 OCT 07 09:06:48,380:[thread: 987] [DEBUG] [daemon.h.b.b]start nio server
+2021 OCT 07 09:06:48,429:[thread: 993] [DEBUG] [daemon.h.b.c]SelectReactor run()
+2021 OCT 07 09:06:50,29:[thread: 995] [ERROR] [daemon.c.c]start heartbeat server.
+2021 OCT 07 09:09:19,259:[thread: 997] [DEBUG] [daemon.c.b]close conn
+2021 OCT 07 09:09:19,174:[thread: 997] [DEBUG] [com.moborobo.daemon.server.ServerService]no connection, stop service
+2021 OCT 07 09:09:19,178:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]** Enter ServerService onDestroy. **
+2021 OCT 07 09:09:20,515:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]*Close LogCenter.
+2021 OCT 07 09:11:00,103:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onCreate()
+2021 OCT 07 09:11:00,110:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart()
+2021 OCT 07 09:11:00,111:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mIsStarting is false, set mIsStarting = true
+2021 OCT 07 09:11:00,111:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]startDaemonServer(false)
+2021 OCT 07 09:11:00,113:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mDaemonServer == null
+2021 OCT 07 09:11:00,187:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]set mIsStarting = false
+2021 OCT 07 09:11:00,187:[thread: 1204] [DEBUG] [daemon.h.b.b]start nio server
+2021 OCT 07 09:11:00,187:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart used time: 77
+2021 OCT 07 09:11:00,211:[thread: 1208] [DEBUG] [daemon.h.b.c]SelectReactor run()
+2021 OCT 07 09:11:00,887:[thread: 1210] [ERROR] [daemon.c.c]start heartbeat server.
+2021 OCT 07 09:11:48,17:[thread: 1212] [DEBUG] [daemon.c.b]close conn
+2021 OCT 07 09:11:48,25:[thread: 1212] [DEBUG] [com.moborobo.daemon.server.ServerService]no connection, stop service
+2021 OCT 07 09:11:48,307:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]** Enter ServerService onDestroy. **
+2021 OCT 07 09:11:49,424:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]*Close LogCenter.
+2021 OCT 07 09:12:13,788:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onCreate()
+2021 OCT 07 09:12:13,794:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart()
+2021 OCT 07 09:12:13,796:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mIsStarting is false, set mIsStarting = true
+2021 OCT 07 09:12:13,797:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]startDaemonServer(false)
+2021 OCT 07 09:12:13,798:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]mDaemonServer == null
+2021 OCT 07 09:12:13,892:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]set mIsStarting = false
+2021 OCT 07 09:12:13,893:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]ServerService onStart used time: 99
+2021 OCT 07 09:12:13,893:[thread: 1217] [DEBUG] [daemon.h.b.b]start nio server
+2021 OCT 07 09:12:13,913:[thread: 1223] [DEBUG] [daemon.h.b.c]SelectReactor run()
+2021 OCT 07 09:12:14,620:[thread: 1225] [ERROR] [daemon.c.c]start heartbeat server.
+2021 OCT 07 09:15:31,263:[thread: 1234] [DEBUG] [daemon.c.b]close conn
+2021 OCT 07 09:15:31,267:[thread: 1234] [DEBUG] [com.moborobo.daemon.server.ServerService]no connection, stop service
+2021 OCT 07 09:15:31,480:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]** Enter ServerService onDestroy. **
+2021 OCT 07 09:15:32,599:[thread: 1] [DEBUG] [com.moborobo.daemon.server.ServerService]*Close LogCenter.
+
