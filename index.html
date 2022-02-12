@@ -1,95 +1,72 @@
-<div id="app" class="antialiased">  
-  <header class="text-center border-b border-gray-300 mb-6 pb-2">
-    <h1 class="m-0 text-3xl font-medium">COVID-19 Dashboard</h1>
-    <p class="my-4 text-md text-gray-600">
-      Data sourced from:<br>
-      <a :href="api" target="_blank">{{ api }}</a><br>
-      by <a href="https://github.com/javieraviles">Javier Aviles</a>
-    </p>
-    <p class="my-4 text-md">
-      <button
-        @click="fetchCountryData"
-        class="bg-purple-600 rounded py-2 px-4 text-white text-sm font-semibold ml-auto"
-        :class="{ 'cursor-not-allowed opacity-50': (!statsLoaded || !countriesLoaded) }"
-      >
-        <span v-if="statsLoaded || countriesLoaded">Refresh</span>
-        <span v-else>Loading&hellip;</span>
-      </button>
-    </p>
-  </header>
-    
-  <alert v-if="errorStats">
-    <template v-slot:title>
-      Error Loading Stats!
-    </template>
-    <template v-slot:content>
-      <p>There was an error loading the stats data.</p>
-    </template>
-  </alert>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - corona tracker</title>
+  <link rel="stylesheet" href="./style.css">
 
-  <ul v-if="statsLoaded" class="sm:grid sm:grid-cols-3 sm:gap-4 mb-4">
-    <li v-for="(value, label, idx) in stats">
-      <card>
-        <stat-title>Total {{ label }}:</stat-title>
-        <stat-num :stat="value" />
-      </card>
-    </li>
-  </ul>
-
-  <alert v-if="errorCountries">
-    <template v-slot:title>
-      Error Loading Country Data!
-    </template>
-    <template v-slot:content>
-      <p>There was an error loading the country-specific data.</p>
-    </template>
-  </alert>
-
-  <ul v-if="countriesLoaded" class="md:grid md:grid-cols-2 md:gap-4">
-    <li v-for="(item, idx) in paginatedData" :key="idx">
-      <card>
-        <h3 class="font-bold text-md mb-3 pb-2 border-b border-gray-300">
-          {{ item.country }}
-        </h3>
-        <div class="grid grid-cols-2 gap-4">
-          <p>
-            <stat-title>Active:</stat-title>
-            <stat-num :stat="item.active" />
-          </p>
-          <p>
-            <stat-title>Today:</stat-title>
-            <stat-num :stat="item.todayCases" />
-          </p>
-          <p>
-            <stat-title>Cases:</stat-title>
-            <stat-num :stat="item.cases" />
-          </p>
-          <p>
-            <stat-title>Deaths:</stat-title>
-            <stat-num :stat="item.deaths" />
-          </p>
-          <p>
-            <stat-title>Recovered:</stat-title>
-            <stat-num :stat="item.recovered" />
-          </p>
-          <p>
-            <stat-title>Critical:</stat-title>
-            <stat-num :stat="item.critical" />
-          </p>
-        </div>
-      </card>
-    </li>
-  </ul>
-  
-  <div v-if="countriesLoaded">
-    <div class="text-center my-4 text-sm text-gray-600">
-      <p>{{ pagePlace }}</p>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!--
+Prakash Kumar Mahato (Bantu)
+-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<h1 class="title">Novel Coronavirus (COVID-19) Live Tracker India</h1>
+<div class="container">
+  <!-- Card stats -->
+  <div class="card card-stats">
+    <!-- Card body -->
+    <div class="card-body">
+      <div class="col">
+        <h5 class="card-title text-uppercase text-muted">Total Cases</h5>
+        <span class="h2 font-weight-bold total_cases color-red count">0</span>
+      </div>
+      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+        <i class="fas fa-users"></i>
+      </div>
     </div>
-    <pagination
-      :has-prev="pageNumber > 0"
-      :has-next="pageNumber < pageCount -1"
-      @next="nextPage"
-      @prev="prevPage"
-    />
+  </div>
+  <div class="card card-stats">
+    <!-- Card body -->
+    <div class="card-body">
+      <div class="col">
+        <h5 class="card-title text-uppercase text-muted">Deaths</h5>
+        <span class="h2 font-weight-bold deaths color-blue count">0</span>
+      </div>
+      <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
+        <i class="fas fa-procedures"></i>
+      </div>
+    </div>
+  </div>
+  <div class="card card-stats">
+    <!-- Card body -->
+    <div class="card-body">
+      <div class="col">
+        <h5 class="card-title text-uppercase text-muted">Recovered</h5>
+        <span class="h2 font-weight-bold recovered color-green count">0</span>
+      </div>
+      <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+        <i class="fas fa-child"></i>
+      </div>
+    </div>
+  </div>
+  <div class="card card-stats">
+    <!-- Card body -->
+    <div class="card-body">
+      <div class="col">
+        <h5 class="card-title text-uppercase text-muted">New Cases Today</h5>
+        <span class="h2 font-weight-bold new_cases color-orange count">0</span>
+      </div>
+      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+        <i class="fas fa-bell"></i>
+      </div>
+    </div>
   </div>
 </div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
