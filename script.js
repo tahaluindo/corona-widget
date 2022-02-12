@@ -23,7 +23,7 @@ function displayData(data) {
   console.log(parsedData.countries_stat);
   const countries = parsedData.countries_stat;
   countries.forEach(function(country) {
-    if (country.country_name == "Indonesia") {
+    if (country.country_name == "India") {
       totalCases.innerHTML = country.cases;
       deaths.innerHTML = country.deaths;
       recovered.innerHTML = country.total_recovered;
